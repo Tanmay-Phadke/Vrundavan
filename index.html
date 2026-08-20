@@ -1,34 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Venunad Caterers | Premium Culinary & Event Hospitality</title>
+  <title>VENUNAD (वेणूनाद) | Authentic Faral, Sweets & Pure Veg Catering</title>
 
   <!-- Google Fonts & Font Awesome Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Yatra+One&family=Cinzel:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
-    :root {
-      --primary: #c97a29;
-      --primary-dark: #9c5c1a;
-      --primary-light: #fbf1e4;
-      --accent: #2c6e49;
-      --dark: #1b1917;
-      --charcoal: #2c2825;
-      --cream: #faf7f2;
-      --white: #ffffff;
-      --gray-light: #f0ebe1;
-      --gray-text: #6b635b;
-      --border: #e6dfd5;
-      --shadow-sm: 0 4px 15px rgba(0, 0, 0, 0.04);
-      --shadow-md: 0 12px 30px rgba(0, 0, 0, 0.08);
-      --shadow-lg: 0 20px 45px rgba(0, 0, 0, 0.12);
-      --radius: 14px;
-      --transition: all 0.3s ease;
+    /* Theme extracted from Royal Peacock & Gold Logo */
+    :root[data-theme="dark"] {
+      --bg: #060e0c;
+      --bg-surface: #0a1714;
+      --bg-card: rgba(14, 29, 25, 0.85);
+      --border: rgba(212, 175, 55, 0.2);
+      --border-hover: #d4af37;
+      --gold: #d4af37;
+      --gold-light: #f5e7a9;
+      --gold-gradient: linear-gradient(135deg, #bf953f 0%, #fcf6ba 30%, #b38728 70%, #fbf5b7 100%);
+      --gold-glow: rgba(212, 175, 55, 0.22);
+      --peacock-teal: #00a896;
+      --peacock-deep: #0f2b25;
+      --veg-green: #22c55e;
+      --text: #e6edea;
+      --text-muted: #9bb0a9;
+      --heading: #ffffff;
+      --badge-bg: rgba(212, 175, 55, 0.12);
+      --shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+    }
+
+    :root[data-theme="light"] {
+      --bg: #f5f8f7;
+      --bg-surface: #ffffff;
+      --bg-card: #ffffff;
+      --border: #dce5e1;
+      --border-hover: #b8860b;
+      --gold: #b8860b;
+      --gold-light: #fff8db;
+      --gold-gradient: linear-gradient(135deg, #b8860b 0%, #d4af37 50%, #996515 100%);
+      --gold-glow: rgba(184, 134, 11, 0.15);
+      --peacock-teal: #007a6e;
+      --peacock-deep: #e6f2ef;
+      --veg-green: #15803d;
+      --text: #1d2b27;
+      --text-muted: #566c66;
+      --heading: #071a15;
+      --badge-bg: #fff6d9;
+      --shadow: 0 10px 30px rgba(7, 26, 21, 0.08);
     }
 
     * {
@@ -43,18 +65,24 @@
 
     body {
       font-family: 'Plus Jakarta Sans', sans-serif;
-      background-color: var(--cream);
-      color: var(--charcoal);
+      background-color: var(--bg);
+      color: var(--text);
       line-height: 1.6;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      overflow-x: hidden;
     }
 
-    h1, h2, h3, h4, .brand-font {
-      font-family: 'Playfair Display', serif;
+    .brand-devanagari {
+      font-family: 'Yatra One', cursive;
+    }
+
+    .font-royal {
+      font-family: 'Cinzel', serif;
     }
 
     .container {
-      width: 90%;
-      max-width: 1180px;
+      width: 92%;
+      max-width: 1200px;
       margin: 0 auto;
     }
 
@@ -62,81 +90,40 @@
       padding: 90px 0;
     }
 
-    .section-header {
-      text-align: center;
-      max-width: 650px;
-      margin: 0 auto 55px;
-    }
-
-    .section-header .tag {
-      font-size: 0.82rem;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-weight: 700;
-      color: var(--primary);
-      margin-bottom: 8px;
+    /* Gold Gradient Text Helper */
+    .gold-text {
+      background: var(--gold-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
       display: inline-block;
     }
 
-    .section-header h2 {
-      font-size: 2.4rem;
-      color: var(--dark);
-      margin-bottom: 12px;
-    }
-
-    .section-header p {
-      color: var(--gray-text);
-      font-size: 1rem;
-    }
-
-    /* Buttons */
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      padding: 13px 28px;
-      border-radius: 30px;
-      font-weight: 600;
-      font-size: 0.95rem;
-      text-decoration: none;
-      cursor: pointer;
-      border: 2px solid transparent;
-      transition: var(--transition);
-    }
-
-    .btn-primary {
-      background: var(--primary);
-      color: var(--white);
-    }
-
-    .btn-primary:hover {
-      background: var(--primary-dark);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(201, 122, 41, 0.25);
-    }
-
-    .btn-outline {
-      border-color: var(--primary);
-      color: var(--primary);
-      background: transparent;
-    }
-
-    .btn-outline:hover {
-      background: var(--primary);
-      color: var(--white);
-      transform: translateY(-2px);
+    /* Ambient Pattern */
+    .bg-ambient {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 10% 20%, rgba(0, 168, 150, 0.08) 0%, transparent 40%),
+                  radial-gradient(circle at 90% 80%, rgba(212, 175, 55, 0.06) 0%, transparent 40%);
+      pointer-events: none;
+      z-index: -1;
     }
 
     /* Navbar */
     .navbar {
       position: sticky;
       top: 0;
-      background: rgba(250, 247, 242, 0.94);
-      backdrop-filter: blur(10px);
-      z-index: 1000;
+      background: rgba(10, 23, 20, 0.92);
+      backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
-      padding: 16px 0;
+      z-index: 1000;
+      padding: 12px 0;
+    }
+
+    [data-theme="light"] .navbar {
+      background: rgba(255, 255, 255, 0.94);
     }
 
     .nav-wrap {
@@ -145,20 +132,34 @@
       align-items: center;
     }
 
-    .brand {
+    .brand-logo-wrap {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 14px;
       text-decoration: none;
-      font-family: 'Playfair Display', serif;
-      font-size: 1.7rem;
-      font-weight: 700;
-      color: var(--primary-dark);
     }
 
-    .brand i {
-      color: var(--primary);
-      font-size: 1.4rem;
+    .logo-img {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--gold);
+      box-shadow: 0 0 15px var(--gold-glow);
+    }
+
+    .brand-text h1 {
+      font-size: 1.45rem;
+      color: var(--heading);
+      letter-spacing: 1.5px;
+      line-height: 1.1;
+    }
+
+    .brand-text span {
+      font-size: 0.8rem;
+      color: var(--gold);
+      font-weight: 700;
+      letter-spacing: 1px;
     }
 
     .nav-links {
@@ -170,300 +171,400 @@
 
     .nav-links a {
       text-decoration: none;
-      color: var(--charcoal);
-      font-weight: 500;
+      color: var(--text-muted);
+      font-weight: 600;
       font-size: 0.92rem;
-      transition: var(--transition);
+      transition: color 0.2s ease;
     }
 
     .nav-links a:hover {
-      color: var(--primary);
+      color: var(--gold);
     }
 
-    .nav-btn {
-      padding: 8px 20px;
-      font-size: 0.85rem;
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .theme-btn {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      color: var(--gold);
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+    }
+
+    .theme-btn:hover {
+      border-color: var(--gold);
+      transform: scale(1.05);
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 13px 26px;
+      border-radius: 30px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-gold {
+      background: var(--gold-gradient);
+      color: #060e0c;
+      font-weight: 800;
+      box-shadow: 0 4px 20px var(--gold-glow);
+    }
+
+    .btn-gold:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(212, 175, 55, 0.4);
+    }
+
+    .btn-whatsapp {
+      background: #25d366;
+      color: #ffffff;
+      font-weight: 700;
+    }
+
+    .btn-whatsapp:hover {
+      background: #1ebc59;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.35);
     }
 
     /* Hero Section */
     .hero {
-      padding: 80px 0 70px;
-      background: radial-gradient(circle at top right, #fff1e0 0%, #faf7f2 60%);
+      padding: 70px 0 60px;
+      position: relative;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1.2fr 0.8fr;
       gap: 50px;
       align-items: center;
     }
 
-    .hero-content h1 {
-      font-size: 3.2rem;
-      line-height: 1.2;
-      color: var(--dark);
-      margin-bottom: 20px;
-    }
-
-    .hero-content h1 span {
-      color: var(--primary);
-      font-style: italic;
-    }
-
-    .hero-content p {
-      font-size: 1.1rem;
-      color: var(--gray-text);
-      margin-bottom: 30px;
-    }
-
-    .hero-badges {
-      display: flex;
-      gap: 25px;
-      margin-top: 35px;
-      border-top: 1px solid var(--border);
-      padding-top: 25px;
-    }
-
-    .badge-item h4 {
-      font-size: 1.5rem;
-      color: var(--primary-dark);
-    }
-
-    .badge-item p {
-      font-size: 0.85rem;
-      color: var(--gray-text);
-      margin: 0;
-    }
-
-    .hero-image-wrap {
-      position: relative;
-    }
-
-    .hero-img {
-      width: 100%;
-      height: 460px;
-      object-fit: cover;
-      border-radius: 20px;
-      box-shadow: var(--shadow-lg);
-    }
-
-    .floating-card {
-      position: absolute;
-      bottom: -20px;
-      left: -20px;
-      background: var(--white);
-      padding: 16px 22px;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow-md);
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      border: 1px solid var(--border);
-    }
-
-    .floating-card i {
-      font-size: 1.6rem;
-      color: var(--accent);
-    }
-
-    .floating-card strong {
-      display: block;
-      font-size: 0.95rem;
-      color: var(--dark);
-    }
-
-    .floating-card small {
-      color: var(--gray-text);
-      font-size: 0.8rem;
-    }
-
-    /* Features / Why Us */
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 25px;
-    }
-
-    .feature-card {
-      background: var(--white);
-      padding: 35px 25px;
-      border-radius: var(--radius);
-      border: 1px solid var(--border);
-      transition: var(--transition);
-    }
-
-    .feature-card:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--shadow-md);
-      border-color: var(--primary);
-    }
-
-    .feature-icon {
-      width: 55px;
-      height: 55px;
-      border-radius: 12px;
-      background: var(--primary-light);
-      color: var(--primary-dark);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.4rem;
-      margin-bottom: 20px;
-    }
-
-    .feature-card h3 {
-      font-size: 1.2rem;
-      margin-bottom: 10px;
-      color: var(--dark);
-    }
-
-    .feature-card p {
-      font-size: 0.9rem;
-      color: var(--gray-text);
-    }
-
-    /* Menu / Offerings Section */
-    .menu-section {
-      background: #f4eee3;
-    }
-
-    .menu-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 30px;
-    }
-
-    .menu-card {
-      background: var(--white);
-      border-radius: var(--radius);
-      overflow: hidden;
-      box-shadow: var(--shadow-sm);
-      border: 1px solid var(--border);
-      transition: var(--transition);
-    }
-
-    .menu-card:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--shadow-md);
-    }
-
-    .menu-card-img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-    }
-
-    .menu-card-body {
-      padding: 24px;
-    }
-
-    .menu-tag {
-      font-size: 0.75rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      color: var(--primary);
-      letter-spacing: 1px;
-    }
-
-    .menu-card-body h3 {
-      font-size: 1.3rem;
-      color: var(--dark);
-      margin: 6px 0 10px;
-    }
-
-    .menu-card-body p {
-      font-size: 0.9rem;
-      color: var(--gray-text);
-      margin-bottom: 16px;
-    }
-
-    .menu-list {
-      list-style: none;
-      border-top: 1px solid var(--border);
-      padding-top: 12px;
-    }
-
-    .menu-list li {
-      font-size: 0.88rem;
-      color: var(--charcoal);
-      display: flex;
+    .veg-tag {
+      display: inline-flex;
       align-items: center;
       gap: 8px;
+      padding: 6px 16px;
+      background: rgba(34, 197, 94, 0.1);
+      border: 1px solid rgba(34, 197, 94, 0.3);
+      border-radius: 30px;
+      color: var(--veg-green);
+      font-weight: 700;
+      font-size: 0.82rem;
+      margin-bottom: 22px;
+    }
+
+    .veg-symbol {
+      width: 14px;
+      height: 14px;
+      border: 2px solid var(--veg-green);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 3px;
+    }
+
+    .veg-symbol::after {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: var(--veg-green);
+      border-radius: 50%;
+    }
+
+    .hero h2 {
+      font-size: 3.3rem;
+      line-height: 1.18;
+      margin-bottom: 20px;
+      color: var(--heading);
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      margin-bottom: 32px;
+      max-width: 620px;
+    }
+
+    /* Logo Showcase Card */
+    .hero-logo-showcase {
+      background: var(--bg-card);
+      border: 2px solid var(--border);
+      border-radius: 24px;
+      padding: 35px 25px;
+      text-align: center;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-logo-showcase::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, var(--gold-glow) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .hero-center-logo {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--gold);
+      box-shadow: 0 0 35px var(--gold-glow);
+      margin-bottom: 20px;
+    }
+
+    .hero-logo-showcase h3 {
+      font-size: 1.8rem;
       margin-bottom: 6px;
     }
 
-    .menu-list li i {
-      color: var(--accent);
-      font-size: 0.75rem;
+    .hero-logo-showcase p {
+      font-size: 0.9rem;
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: 20px;
     }
 
-    /* Direct Contact Section (No Form) */
-    .contact-section {
-      background: var(--white);
-      border-top: 1px solid var(--border);
+    /* Product Section */
+    .section-header {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 45px;
     }
 
-    .contact-grid-cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 24px;
-      margin-bottom: 45px;
+    .section-header .sub-badge {
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 8px;
     }
 
-    .contact-card {
-      background: var(--cream);
+    .section-header h2 {
+      font-size: 2.4rem;
+      color: var(--heading);
+      margin-bottom: 10px;
+    }
+
+    .filter-pills {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 40px;
+    }
+
+    .filter-btn {
+      padding: 10px 22px;
+      border-radius: 30px;
       border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 30px 24px;
-      text-decoration: none;
-      color: inherit;
-      transition: var(--transition);
+      background: var(--bg-surface);
+      color: var(--text-muted);
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .filter-btn.active, .filter-btn:hover {
+      background: var(--gold-gradient);
+      color: #060e0c;
+      font-weight: 700;
+      border-color: transparent;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px var(--gold-glow);
+    }
+
+    /* Product Cards with Images */
+    .items-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .item-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: all 0.3s ease;
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
-      gap: 12px;
+      justify-content: space-between;
+      backdrop-filter: blur(8px);
     }
 
-    .contact-card:hover {
+    .item-card:hover {
+      border-color: var(--border-hover);
       transform: translateY(-5px);
-      border-color: var(--primary);
-      box-shadow: var(--shadow-md);
+      box-shadow: 0 15px 35px var(--gold-glow);
     }
 
-    .contact-card-icon {
-      width: 52px;
-      height: 52px;
-      border-radius: 14px;
-      background: var(--primary-light);
-      color: var(--primary);
+    .item-img-container {
+      width: 100%;
+      height: 190px;
+      overflow: hidden;
+      position: relative;
+      background: var(--bg-surface);
+    }
+
+    .item-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .item-card:hover .item-img {
+      transform: scale(1.06);
+    }
+
+    .item-content {
+      padding: 20px;
       display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      justify-content: space-between;
+    }
+
+    .item-category-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--gold);
+      background: var(--badge-bg);
+      border: 1px solid var(--border);
+      padding: 4px 10px;
+      border-radius: 6px;
+      display: inline-block;
+      margin-bottom: 10px;
+      letter-spacing: 0.5px;
+      align-self: flex-start;
+    }
+
+    .item-title {
+      font-size: 1.25rem;
+      color: var(--heading);
+      margin-bottom: 6px;
+    }
+
+    .item-desc {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      margin-bottom: 18px;
+    }
+
+    .item-order-btn {
+      display: inline-flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.3rem;
-    }
-
-    .contact-card h4 {
-      font-size: 1.2rem;
-      color: var(--dark);
-    }
-
-    .contact-card p {
-      font-size: 0.9rem;
-      color: var(--gray-text);
-    }
-
-    .contact-card .card-value {
-      font-size: 1.05rem;
+      gap: 8px;
+      width: 100%;
+      padding: 10px 0;
+      border-radius: 10px;
+      background: var(--bg-surface);
+      color: var(--gold);
       font-weight: 700;
-      color: var(--primary-dark);
+      font-size: 0.86rem;
+      text-decoration: none;
+      border: 1px solid var(--border);
+      transition: all 0.25s ease;
       margin-top: auto;
     }
 
-    .cta-banner {
-      background: linear-gradient(135deg, #fff8f0 0%, #faede0 100%);
+    .item-card:hover .item-order-btn {
+      background: var(--gold-gradient);
+      color: #060e0c;
+      border-color: transparent;
+    }
+
+    /* Catering & Tiffins */
+    .catering-section {
+      background: var(--bg-surface);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .events-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 22px;
+      margin-bottom: 40px;
+    }
+
+    .event-card {
+      background: var(--bg-card);
       border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px 22px;
+      text-align: center;
+      transition: all 0.25s ease;
+    }
+
+    .event-card:hover {
+      border-color: var(--gold);
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px var(--gold-glow);
+    }
+
+    .event-icon {
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: var(--badge-bg);
+      border: 1px solid var(--border);
+      color: var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin: 0 auto 16px;
+    }
+
+    .event-card h4 {
+      font-size: 1.2rem;
+      color: var(--heading);
+      margin-bottom: 6px;
+    }
+
+    .event-card p {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+    }
+
+    .tiffin-banner {
+      background: linear-gradient(135deg, var(--bg-card), var(--bg));
+      border: 2px dashed var(--gold);
       border-radius: 20px;
-      padding: 40px;
+      padding: 35px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -471,309 +572,673 @@
       flex-wrap: wrap;
     }
 
-    .cta-banner-text h3 {
-      font-size: 1.6rem;
-      color: var(--dark);
+    .tiffin-info h3 {
+      font-size: 1.45rem;
+      color: var(--heading);
       margin-bottom: 6px;
     }
 
-    .cta-banner-text p {
-      color: var(--gray-text);
-      font-size: 0.95rem;
+    .tiffin-info p {
+      font-size: 0.92rem;
+      color: var(--text-muted);
     }
 
-    .cta-banner-actions {
+    /* Contact Section */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-top: 30px;
+    }
+
+    .contact-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 30px 25px;
+      text-decoration: none;
+      color: inherit;
       display: flex;
-      gap: 15px;
-      flex-wrap: wrap;
+      align-items: center;
+      gap: 18px;
+      transition: all 0.25s ease;
     }
 
-    .btn-whatsapp {
-      background: #25d366;
-      color: var(--white);
+    .contact-card:hover {
+      border-color: var(--gold);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px var(--gold-glow);
     }
 
-    .btn-whatsapp:hover {
-      background: #1ebc59;
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(37, 211, 102, 0.25);
+    .contact-icon {
+      width: 55px;
+      height: 55px;
+      border-radius: 14px;
+      background: var(--badge-bg);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      color: var(--gold);
+      flex-shrink: 0;
+    }
+
+    .contact-card-info h4 {
+      font-size: 1.15rem;
+      margin-bottom: 3px;
+      color: var(--heading);
+    }
+
+    .contact-card-info p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    .contact-card-info span {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--gold);
     }
 
     /* Footer */
     footer {
-      background: var(--dark);
-      color: #a8a29e;
-      padding: 45px 0 25px;
+      background: var(--bg-surface);
+      border-top: 1px solid var(--border);
+      padding: 50px 0 30px;
       text-align: center;
-      font-size: 0.88rem;
+    }
+
+    .footer-logo {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      border: 2px solid var(--gold);
+      margin-bottom: 12px;
+      object-fit: cover;
     }
 
     footer p {
-      margin-top: 10px;
-      color: #78716c;
-      font-size: 0.8rem;
+      color: var(--text-muted);
+      font-size: 0.88rem;
     }
 
-    /* Responsive */
     @media (max-width: 860px) {
       .hero-grid {
         grid-template-columns: 1fr;
       }
-      .hero-content h1 {
+      .hero h2 {
         font-size: 2.5rem;
-      }
-      .floating-card {
-        bottom: 10px;
-        left: 10px;
       }
       .nav-links {
         display: none;
       }
-      .cta-banner {
+      .tiffin-banner {
         flex-direction: column;
         text-align: center;
-      }
-      .cta-banner-actions {
-        width: 100%;
-        justify-content: center;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- Sticky Navbar -->
+  <!-- Subtle Peacock/Gold Radial Ambient -->
+  <div class="bg-ambient"></div>
+
+  <!-- Navbar -->
   <nav class="navbar">
     <div class="container nav-wrap">
-      <a href="#home" class="brand">
-        <i class="fa-solid fa-bowl-food"></i> Venunad
+      <a href="#home" class="brand-logo-wrap">
+        <img src="logo.jpg" alt="वेणूनाद Logo" class="logo-img">
+        <div class="brand-text">
+          <h1 class="brand-devanagari gold-text">वेणूनाद</h1>
+          <span>VENUNAD &bull; Pure Veg</span>
+        </div>
       </a>
+
       <ul class="nav-links">
-        <li><a href="#about">Why Us</a></li>
-        <li><a href="#menu">Specialties</a></li>
-        <li><a href="#contact" class="btn btn-primary nav-btn">Contact Us</a></li>
+        <li><a href="#products">Our Menu</a></li>
+        <li><a href="#catering">Catering & Events</a></li>
+        <li><a href="#tiffin">Tiffin Service</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
+
+      <div class="nav-actions">
+        <button class="theme-btn" id="themeToggle" title="Toggle Light/Dark Theme">
+          <i class="fa-solid fa-sun"></i>
+        </button>
+        <a href="https://wa.me/917378829173?text=Hello%20Venunad,%20I%20want%20to%20place%20an%20order/inquiry." target="_blank" class="btn btn-whatsapp">
+          <i class="fa-brands fa-whatsapp"></i> Quick Order
+        </a>
+      </div>
     </div>
   </nav>
 
   <!-- Hero Section -->
   <header class="hero" id="home">
     <div class="container hero-grid">
-      <div class="hero-content">
-        <h1>Grand Celebrations Crafted with <span>Authentic Taste</span>.</h1>
-        <p>From traditional pangat banquets to modern fusion parties, Venunad Caterers combines genuine regional recipes with flawless event hospitality.</p>
-        <div style="display: flex; gap: 15px; flex-wrap: wrap;">
-          <a href="#contact" class="btn btn-primary">Contact Us</a>
-          <a href="#menu" class="btn btn-outline">Explore Menus</a>
+      <div class="hero-left">
+        <div class="veg-tag">
+          <div class="veg-symbol"></div> 100% Pure Vegetarian & Homemade Hygiene
         </div>
-        <div class="hero-badges">
-          <div class="badge-item">
-            <h4>500+</h4>
-            <p>Events Catered</p>
-          </div>
-          <div class="badge-item">
-            <h4>100%</h4>
-            <p>Pure & Fresh Ingredients</p>
-          </div>
-          <div class="badge-item">
-            <h4>Regional</h4>
-            <p>Taste</p>
-          </div>
+        <h2>
+          Authentic Taste of Tradition with <span class="brand-devanagari gold-text">वेणूनाद</span>.
+        </h2>
+        <p>
+          Manufacturers of authentic Maharashtrian Faral, nutritious traditional Ladus, festive sweets, homemade masales & pickles, along with full-scale Pure Veg Event Catering & Tiffin services.
+        </p>
+        <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+          <a href="#products" class="btn btn-gold">
+            <i class="fa-solid fa-utensils"></i> Explore Full Menu
+          </a>
+          <a href="https://wa.me/917378829173?text=Hello%20Venunad,%20I%20want%20to%20order." target="_blank" class="btn btn-whatsapp">
+            <i class="fa-brands fa-whatsapp"></i> WhatsApp Order
+          </a>
         </div>
       </div>
-      <div class="hero-image-wrap">
-        <img src="https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&w=800&q=80" alt="Venunad Buffet Presentation" class="hero-img">
-        <div class="floating-card">
-          <i class="fa-solid fa-shield-halved"></i>
-          <div>
-            <strong>Uncompromising Hygiene</strong>
-            <small>Sanitized setup & certified standards</small>
-          </div>
-        </div>
+
+      <!-- Centerpiece Brand Emblem Showcase -->
+      <div class="hero-logo-showcase">
+        <img src="logo.jpg" alt="Venunad Emblem" class="hero-center-logo">
+        <h3 class="brand-devanagari gold-text">वेणूनाद</h3>
+        <p class="font-royal">Royal Traditional Taste</p>
+        <a href="tel:+917378829173" class="btn btn-gold" style="width: 100%;">
+          <i class="fa-solid fa-phone"></i> Call +91 7378829173
+        </a>
       </div>
     </div>
   </header>
 
-  <!-- Value Propositions / Why Choose Us -->
-  <section id="about">
+  <!-- Products Showcase with Images -->
+  <section id="products">
     <div class="container">
       <div class="section-header">
-        <span class="tag">The Venunad Standard</span>
-        <h2>Designed to Impress Every Guest</h2>
-        <p>We blend timeless culinary traditions with refined presentation and professional guest management.</p>
+        <span class="sub-badge">Handcrafted Delicacies</span>
+        <h2 class="brand-devanagari gold-text">Our Signature Products</h2>
+        <p style="color: var(--text-muted);">Crafted with traditional recipes, pure ingredients, and zero compromise on hygiene.</p>
       </div>
 
-      <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-icon"><i class="fa-solid fa-pepper-hot"></i></div>
-          <h3>Authentic Spices</h3>
-          <p>Traditional gravies and slow-cooked preparations prepared with freshly ground home-style spice blends.</p>
+      <!-- Filter Tabs -->
+      <div class="filter-pills">
+        <button class="filter-btn active" data-filter="all">All Items</button>
+        <button class="filter-btn" data-filter="namkeen">Namkeen & Faral</button>
+        <button class="filter-btn" data-filter="ladu">Nutritious Ladus</button>
+        <button class="filter-btn" data-filter="sweets">Traditional Sweets</button>
+        <button class="filter-btn" data-filter="essentials">Masale, Pickles & Papads</button>
+      </div>
+
+      <!-- Items Grid -->
+      <div class="items-grid">
+
+        <!-- 1. Shev -->
+        <div class="item-card" data-cat="namkeen">
+          <div class="item-img-container">
+            <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=600&q=80" alt="Crispy Shev" class="item-img">
+          </div>
+          <div class="item-content">
+            <span class="item-category-tag">Namkeen / Faral</span>
+            <h3 class="item-title">Crispy Shev</h3>
+            <p class="item-desc">Fresh, golden, perfectly seasoned crunchy shev made with select gram flour.</p>
+            <a href="https://wa.me/917378829173?text=Hi%20Venunad,%20I%20want%20to%20order%20Crispy%20Shev" class="item-order-btn" target="_blank">
+              <i class="fa-brands fa-whatsapp"></i> Order on WhatsApp
+            </a>
+          </div>
         </div>
-        <div class="feature-card">
-          <div class="feature-icon"><i class="fa-solid fa-users-gear"></i></div>
-          <h3>Trained Hospitality Staff</h3>
-          <p>Courteous, uniformly dressed servers and station managers ensuring smooth food flow throughout your event.</p>
+
+        <!-- 2. Chivda -->
+        <div class="item-card" data-cat="namkeen">
+          <div class="item-img-container">
+            <img src="https://images.unsplash.com/photo-1599488615731-7e5c2823ff28?auto=format&fit=crop&w=600&q=80" alt="Special Chivda" class="item-img">
+          </div>
+          <div class="item-content">
+            <span class="item-category-tag">Namkeen / Faral</span>
+            <h3 class="item-title">Special Chivda</h3>
+            <p class="item-desc">Light and savory poha/corn chivda with peanuts, cashews, and aromatic curry leaves.</p>
+            <a href="https://wa.me/917378829173?text=Hi%20Venunad,%20I%20want%20to%20order%20Special%20Chivda" class="item-order-btn" target="_blank">
+              <i class="fa-brands fa-whatsapp"></i> Order on WhatsApp
+            </a>
+          </div>
         </div>
-        <div class="feature-card">
-          <div class="feature-icon"><i class="fa-solid fa-fire-burner"></i></div>
-          <h3>Counters</h3>
-          <p>Ready To serve buffet counters with trained serving staff</p>
+
+        <!-- 3. Chakli -->
+        <div class="item-card" data-cat="namkeen">
+          <div class="item-img-container">
+            <img src="https://images.unsplash.com/photo-1606491956689-2ea866880c84?auto=format&fit=crop&w=600&q=80" alt="Bhajani Chakli" class="item-img">
+          </div>
+          <div class="item-content">
+            <span class="item-category-tag">Namkeen / Faral</span>
+            <h3 class="item-title">Bhajani Chakli</h3>
+            <p class="item-desc">Authentic multigrain bhajani chakli — crispy, spiced, and spiraled to perfection.</p>
+            <a href="https://wa.me/917378829173?text=Hi%20Venunad,%20I%20want%20to%20order%20Bhajani%20Chakli" class="item-order-btn" target="_blank">
+              <i class="fa-brands fa-whatsapp"></i> Order on WhatsApp
+            </a>
+          </div>
         </div>
-        <div class="feature-card">
-          <div class="feature-icon"><i class="fa-solid fa-sliders"></i></div>
-          <h3>Tailored Menus</h3>
-          <p>Flexible menu creation customizable for traditional pangat, executive corporate buffets, or family gatherings.</p>
+
+        <!-- 4. Shankar Pali -->
+        <div class="item-card" data-cat="namkeen">
+          <div class="item-img-container">
+            <img src="https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?auto=format&fit=crop&w=600&q=80" alt="Shankar Pali" class="item-img">
+          </div>
+          <div class="item-content">
+            <span class="item-category-tag">Namkeen / Faral</span>
+            <h3 class="item-title">Shankar Pali</h3>
+            <p class="item-desc">Melt-in-mouth sweet diamond bites prepared with pure ghee and cardamom notes.</p>
+            <a href="https://wa.me/917378829173?text=Hi%20Venunad,%20I%20want%20to%20order%20Shankar%20Pali" class="item-order-btn" target="_blank">
+              <i class="fa-brands fa-whatsapp"></i> Order on WhatsApp
+            </a>
+          </div>
         </div>
+
+        <!-- 5. Fenori -->
+        <div class="item-card" data-cat="namkeen">
+          <div class="item-img-container">
+            <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80" alt="Fenori" class="item-img">
+          </div>
+          <div class="item-content">
+            <span class="item-category-tag">Namkeen / Faral</span>
+            <h3 class="item-title">Fenori</h3>
+            <p class="item-desc">Multi-layered, flaky, sugar-dusted traditional festive delicacy.</p>
+            <a href="https://wa.me/917378829173?text=Hi%20Venunad,%20I%20want%20to%20order%20Fenori" class="item-order-btn" target="_blank">
+              <i class="fa-brands fa-whatsapp"></i> Order on WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <!-- 6. Karanji -->
+        <div class="item-card" data-cat="namkeen">
+          <div class="item-img-container">
+            <img src="https://images.unsplash.com/photo-1599488615731-7e5c2823ff28?auto=format&fit=crop&w=600&q=80" alt="Crisp Karanji" class="item-img">
+          </div>
+          <div class="item-content">
+            <span class="item-category-tag">Namkeen / Faral</span>
+            <h3 class="item-title">Crisp Karanji</h3>
+            <p class="item-desc">Golden crisp pastry pockets stuffed with roasted coconut, poppy seeds, and dry fruits.</p>
+            <a href="https://wa.me/917378829173?text=Hi%20Venunad,%20I%20want%20to%20order%20Crisp%20Karanji" class="item-order-btn" target="_blank">
+              <i class="fa-brands fa-whatsapp"></i> Order on WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <!-- 7. Besan Ladu -->
+        <div class="item-card" data-cat="ladu">
+          <div class="item-img-container">
+            <img src="https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=600&q=80" alt="Besan Ladu" class="item-img">
+          </div>
+          <div class="item-content">
+            <span class="item-category-tag">Nutritious Ladu</span>
+            <h3 class="item-title">Besan Ladu</h3>
+            <p class="item-desc">Slow-roasted aromatic gram flour ladus rich in pure ghee and topped with dry fruits.</p>
+            <a href="https://wa.me/917378829173?text=Hi%20Venunad,%20I%20want%20to%20order%20Besan%20Ladu" class="item-order-btn" target="_blank">
+              <i class="fa-brands fa-whatsapp"></i> Order on WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <!-- 8. Moog Ladu -->
+        <div class="item-card" data-cat="ladu">
+          <div class="item-img-container">
+            <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=600&q=80" alt="Moog Ladu" class="item-img">
+          </div>
+          <div class="item-content">
+            <span class="item-category-tag">Nutritious Ladu</span>
+            <h3 class="item-title">Moog Ladu</h3>
+            <p class="item-desc">Nutrient-dense roasted yellow moong dal ladus prepared with pure desi ghee.</p>
+            <a href="https://wa.me/917378829173?text=Hi%20Venunad,%20I%20want%20to%20order%20Moog%20Ladu" class="item-order-btn" target="_blank">
+              <i class="fa-brands fa-whatsapp"></i> Order on WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <!-- 9. Gahu Pith Ladu -->
+        <div class="item-card" data-cat="ladu">
+          <div class="item-img-container">
+            <img src="https://images.unsplash.com/photo-1505253758473-96b3015f27eb?auto=format&fit=crop&w=600&q=80" alt="Gahu Pith Ladu" class="item-img">
+          </div>
+          <div class="item-content">
+            <span class="item-category-tag">Nutritious Ladu</span>
+            <h3 class="item-title">Gahu Pith Ladu</h3>
+            <p class="item-desc">Wholesome whole wheat flour ladus with traditional spices and pure sweetness.</p>
+            <a href="https://wa.me/917378829173?text=Hi%20Venunad,%20I%20want%20to%20order%20Gahu%20Pith%20Ladu" class="item-order-btn" target="_blank">
+              <i class="fa-brands fa-whatsapp"></i> Order on WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <!-- 10. Paustik Ladu -->
+        <div class="item-card" data-cat="ladu">
+          <div class="item-img-container">
+            <img src="https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?auto=format&fit=crop&w=600&q=80" alt="Paustik Ladu" class="item-img">
+          </div>
+          <div class="item-content">
+            <span class="item-category-tag">Healthy / Immunity</span>
+            <h3 class="item-title">Paustik Ladu</h3>
+            <p class="item-desc">Power-packed multiseed, multigrain, and dry fruit ladus for high energy & vitality.</p>
+            <a href="https://wa.me/917378829173?text=Hi%20Venunad,%20I%20want%20to%20order%20Paustik%20Ladu" class="item-order-btn" target="_blank">
+              <i class="fa-brands fa-whatsapp"></i> Order on WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <!-- 11. Methi Ladu -->
+        <div class="item-card" data-cat="ladu">
+          <div class="item-img-container">
+            <img src="https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=600&q=80" alt="Methi Ladu" class="item-img">
+          </div>
+          <div class="item-content">
+            <span class="item-category-tag">Ayurvedic / Health</span>
+            <h3 class="item-title">Methi Ladu</h3>
+            <p class="item-desc">Traditional herbal fenugreek ladus with dry ginger, dink, and jaggery for joint health.</p>
+            <a href="https://wa.me/917378829173?text=Hi%20Venunad,%20I%20want%20to%20order%20Methi%20Ladu" class="item-order-btn" target="_blank">
+              <i class="fa-brands fa-whatsapp"></i> Order on WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <!-- 12. Aliv Ladu -->
+        <div class="item-card" data-cat="ladu">
+          <div class="item-img-container">
+            <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=600&q=80" alt="Aliv Ladu" class="item-img">
+          </div>
+          <div class="item-content">
+            <span class="item-category-tag">Superfood Ladu</span>
+            <h3 class="item-title">Aliv (Garden Cress) Ladu</h3>
+            <p class="item-desc">Rich in iron and calcium, cooked with fresh coconut and wholesome jaggery.</p>
+            <a href="https://wa.me/917378829173?text=Hi%20Venunad,%20I%20want%20to%20order%20Aliv%20Ladu" class="item-order-btn" target="_blank">
+              <i class="fa-brands fa-whatsapp"></i> Order on WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <!-- 13. Puran Poli -->
+        <div class="item-card" data-cat="sweets">
+          <div class="item-img-container">
+            <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&w=600&q=80" alt="Puran Poli" class="item-img">
+          </div>
+          <div class="item-content">
+            <span class="item-category-tag">Festive Mithai</span>
+            <h3 class="item-title">Soft Puran Poli</h3>
+            <p class="item-desc">Ultra-thin, soft flatbreads stuffed with rich chana dal puran, nutmeg, and cardamom.</p>
+            <a href="https://wa.me/917378829173?text=Hi%20Venunad,%20I%20want%20to%20order%20Puran%20Poli" class="item-order-btn" target="_blank">
+              <i class="fa-brands fa-whatsapp"></i> Order on WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <!-- 14. Modak -->
+        <div class="item-card" data-cat="sweets">
+          <div class="item-img-container">
+            <img src="https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?auto=format&fit=crop&w=600&q=80" alt="Ukadiche Modak" class="item-img">
+          </div>
+          <div class="item-content">
+            <span class="item-category-tag">Festive Mithai</span>
+            <h3 class="item-title">Ukadiche & Fried Modak</h3>
+            <p class="item-desc">Steamed rice flour modaks filled with freshly grated coconut and aromatic jaggery.</p>
+            <a href="https://wa.me/917378829173?text=Hi%20Venunad,%20I%20want%20to%20order%20Modak" class="item-order-btn" target="_blank">
+              <i class="fa-brands fa-whatsapp"></i> Order on WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <!-- 15. Basundi & Rabdi -->
+        <div class="item-card" data-cat="sweets">
+          <div class="item-img-container">
+            <img src="https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=600&q=80" alt="Basundi and Rabdi" class="item-img">
+          </div>
+          <div class="item-content">
+            <span class="item-category-tag">Festive Mithai</span>
+            <h3 class="item-title">Basundi & Rabdi</h3>
+            <p class="item-desc">Slow-reduced full cream milk infused with saffron strands, pistachios, and almonds.</p>
+            <a href="https://wa.me/917378829173?text=Hi%20Venunad,%20I%20want%20to%20order%20Basundi/Rabdi" class="item-order-btn" target="_blank">
+              <i class="fa-brands fa-whatsapp"></i> Order on WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <!-- 16. Shrikhand & Amrakhand -->
+        <div class="item-card" data-cat="sweets">
+          <div class="item-img-container">
+            <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=600&q=80" alt="Shrikhand and Amrakhand" class="item-img">
+          </div>
+          <div class="item-content">
+            <span class="item-category-tag">Festive Mithai</span>
+            <h3 class="item-title">Shrikhand & Amrakhand</h3>
+            <p class="item-desc">Velvety hung curd dessert whipped with cardamom and natural Alphonso mango pulp.</p>
+            <a href="https://wa.me/917378829173?text=Hi%20Venunad,%20I%20want%20to%20order%20Shrikhand/Amrakhand" class="item-order-btn" target="_blank">
+              <i class="fa-brands fa-whatsapp"></i> Order on WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <!-- 17. Mangane & Sakharbhat -->
+        <div class="item-card" data-cat="sweets">
+          <div class="item-img-container">
+            <img src="https://images.unsplash.com/photo-1505253758473-96b3015f27eb?auto=format&fit=crop&w=600&q=80" alt="Mangane and Sakharbhat" class="item-img">
+          </div>
+          <div class="item-content">
+            <span class="item-category-tag">Festive Mithai</span>
+            <h3 class="item-title">Mangane & Sakharbhat</h3>
+            <p class="item-desc">Traditional Konkani Mangane (chana dal kheer) & saffron-scented wedding Sakharbhat.</p>
+            <a href="https://wa.me/917378829173?text=Hi%20Venunad,%20I%20want%20to%20order%20Mangane/Sakharbhat" class="item-order-btn" target="_blank">
+              <i class="fa-brands fa-whatsapp"></i> Order on WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <!-- 18. Gulabjamun & Halwa -->
+        <div class="item-card" data-cat="sweets">
+          <div class="item-img-container">
+            <img src="https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?auto=format&fit=crop&w=600&q=80" alt="Gulabjamun and Halwa" class="item-img">
+          </div>
+          <div class="item-content">
+            <span class="item-category-tag">Festive Mithai</span>
+            <h3 class="item-title">Gulabjamun & Halwa</h3>
+            <p class="item-desc">Soft mawa gulabjamuns, slow-cooked Gajar Halwa, and rich Moog Dal Halwa.</p>
+            <a href="https://wa.me/917378829173?text=Hi%20Venunad,%20I%20want%20to%20order%20Gulabjamun/Halwa" class="item-order-btn" target="_blank">
+              <i class="fa-brands fa-whatsapp"></i> Order on WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <!-- 19. Authentic Masales -->
+        <div class="item-card" data-cat="essentials">
+          <div class="item-img-container">
+            <img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=600&q=80" alt="Authentic Masales" class="item-img">
+          </div>
+          <div class="item-content">
+            <span class="item-category-tag">Pantry Essentials</span>
+            <h3 class="item-title">Authentic Masales</h3>
+            <p class="item-desc">Goda Masala, Kanda Lasun Masala & Garam Masala roasted and pounded traditionally.</p>
+            <a href="https://wa.me/917378829173?text=Hi%20Venunad,%20I%20want%20to%20order%20Masales" class="item-order-btn" target="_blank">
+              <i class="fa-brands fa-whatsapp"></i> Order on WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <!-- 20. Pickles -->
+        <div class="item-card" data-cat="essentials">
+          <div class="item-img-container">
+            <img src="https://images.unsplash.com/photo-1589135233689-d4999f8d97be?auto=format&fit=crop&w=600&q=80" alt="Homemade Pickles" class="item-img">
+          </div>
+          <div class="item-content">
+            <span class="item-category-tag">Pantry Essentials</span>
+            <h3 class="item-title">Homemade Pickles (Lonche)</h3>
+            <p class="item-desc">Sun-matured raw mango, lemon, and mixed chili pickles made with mustard oil & spices.</p>
+            <a href="https://wa.me/917378829173?text=Hi%20Venunad,%20I%20want%20to%20order%20Homemade%20Pickles" class="item-order-btn" target="_blank">
+              <i class="fa-brands fa-whatsapp"></i> Order on WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <!-- 21. Papads -->
+        <div class="item-card" data-cat="essentials">
+          <div class="item-img-container">
+            <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=600&q=80" alt="Handcrafted Papads" class="item-img">
+          </div>
+          <div class="item-content">
+            <span class="item-category-tag">Pantry Essentials</span>
+            <h3 class="item-title">Handcrafted Papads</h3>
+            <p class="item-desc">Crisp Udid papads, Poha mirgund, Nachni papads, and sun-dried potato wafers.</p>
+            <a href="https://wa.me/917378829173?text=Hi%20Venunad,%20I%20want%20to%20order%20Papads" class="item-order-btn" target="_blank">
+              <i class="fa-brands fa-whatsapp"></i> Order on WhatsApp
+            </a>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- Signature Menu Highlights -->
-  <section class="menu-section" id="menu">
+  <!-- Pure Veg Catering & Events Section -->
+  <section class="catering-section" id="catering">
     <div class="container">
       <div class="section-header">
-        <span class="tag">Culinary Highlights</span>
-        <h2>Curated Specialties</h2>
-        <p>A glimpse into our most celebrated menu collections prepared with authentic craftsmanship.</p>
+        <span class="sub-badge">Pure Veg Catering Services</span>
+        <h2 class="brand-devanagari gold-text">Grand Celebrations & Ceremonies</h2>
+        <p style="color: var(--text-muted);">Flawless pure vegetarian food service for sacred rituals and large family gatherings.</p>
       </div>
 
-      <div class="menu-grid">
-        <!-- Card 1 -->
-        <div class="menu-card">
-          <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=600&q=80" alt="Traditional Feast" class="menu-card-img">
-          <div class="menu-card-body">
-            <span class="menu-tag">Traditional Pangat</span>
-            <h3>Royal Heritage Feast</h3>
-            <p>Timeless multi-course spreads served with regional warmth and elegance.</p>
-            <ul class="menu-list">
-              <li><i class="fa-solid fa-check"></i> Hot Puri & Soft Bhakri setups</li>
-              <li><i class="fa-solid fa-check"></i> Katachi Amti & Signature Dal Fry</li>
-              <li><i class="fa-solid fa-check"></i> Crisp Kothimbir Vadi & Alu Vadi</li>
-              <li><i class="fa-solid fa-check"></i> Saffron Shrikhand & Basundi</li>
-            </ul>
-          </div>
+      <div class="events-grid">
+        <div class="event-card">
+          <div class="event-icon"><i class="fa-solid fa-heart"></i></div>
+          <h4>Wedding (लग्न सोहळा)</h4>
+          <p>Traditional banquet feasts, welcome drinks, Pangat setups, and royal wedding menus.</p>
         </div>
 
-        <!-- Card 2 -->
-        <div class="menu-card">
-          <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=600&q=80" alt="Starters & Live Counters" class="menu-card-img">
-          <div class="menu-card-body">
-            <span class="menu-tag">Appetizers & Live</span>
-            <h3>Modern Celebration Platter</h3>
-            <p>Crispy delicacies and live stalls that keep the crowd engaged and delighted.</p>
-            <ul class="menu-list">
-              <li><i class="fa-solid fa-check"></i> Char-grilled Paneer & Vegetable Tikkas</li>
-              <li><i class="fa-solid fa-check"></i> Live Chaat, Pani Puri & Dahi Bhalla</li>
-              <li><i class="fa-solid fa-check"></i> Crispy Corn, Spring Rolls & Sliders</li>
-              <li><i class="fa-solid fa-check"></i> Fresh Fruit Mocktails & Welcome Drinks</li>
-            </ul>
-          </div>
+        <div class="event-card">
+          <div class="event-icon"><i class="fa-solid fa-om"></i></div>
+          <h4>Munj (मुंज सोहळा)</h4>
+          <p>Authentic Brahmin-style ritual meals, Matar Usal, Puri, Amti, and traditional desserts.</p>
         </div>
 
-        <!-- Card 3 -->
-        <div class="menu-card">
-          <img src="https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=600&q=80" alt="Desserts" class="menu-card-img">
-          <div class="menu-card-body">
-            <span class="menu-tag">Grand Desserts</span>
-            <h3>Sweet Celebrations</h3>
-            <p>Traditional slow-churned sweets and modern confectionery balance.</p>
-            <ul class="menu-list">
-              <li><i class="fa-solid fa-check"></i> Slow-cooked Ukadiche Modak (Seasonal)</li>
-              <li><i class="fa-solid fa-check"></i> Warm Gulab Jamun with Rabdi</li>
-              <li><i class="fa-solid fa-check"></i> Dry Fruit Moong Dal Halwa</li>
-              <li><i class="fa-solid fa-check"></i> Custom Ice Cream & Kulfi Counters</li>
-            </ul>
-          </div>
+        <div class="event-card">
+          <div class="event-icon"><i class="fa-solid fa-baby"></i></div>
+          <h4>Baby Shower (डोहाळे जेवण)</h4>
+          <p>Special multi-flavor spreads with 7 distinct flavors and custom decorative food thalis.</p>
+        </div>
+
+        <div class="event-card">
+          <div class="event-icon"><i class="fa-solid fa-cake-candles"></i></div>
+          <h4>Birthdays & Parties</h4>
+          <p>Live chaat counters, starters, buffet dining, and custom dessert spreads.</p>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- Contact Us Section (Direct Actions, No Database) -->
-  <section class="contact-section" id="contact">
-    <div class="container">
-      <div class="section-header">
-        <span class="tag">Get In Touch</span>
-        <h2>Connect With Us Directly</h2>
-        <p>Planning a wedding, pooja, or celebration? Reach out directly via call or message to discuss menus and booking dates.</p>
-      </div>
-
-      <div class="contact-grid-cards">
-        <!-- Call Card -->
-        <a href="tel:+917378829173" class="contact-card">
-          <div class="contact-card-icon">
-            <i class="fa-solid fa-phone"></i>
+      <!-- Tiffin Section -->
+      <div class="tiffin-banner" id="tiffin">
+        <div class="tiffin-info">
+          <div class="veg-tag" style="margin-bottom: 8px;">
+            <div class="veg-symbol"></div> Daily & Monthly Basis
           </div>
-          <h4>Phone Call</h4>
-          <p>Speak directly with our event manager for dates and packages.</p>
-          <span class="card-value">+91 7378829173</span>
+          <h3 class="brand-devanagari gold-text">Fresh Homemade Tiffin Supply</h3>
+          <p>Wholesome home-cooked pure veg tiffin service with soft rotis, sabzi, dal, and rice as per your meal requirements.</p>
+        </div>
+        <a href="https://wa.me/917378829173?text=Hello%20Venunad,%20I%20am%20interested%20in%20your%20Tiffin%20Service." target="_blank" class="btn btn-whatsapp">
+          <i class="fa-brands fa-whatsapp"></i> Inquire for Tiffins
         </a>
+      </div>
 
-        <!-- WhatsApp Card -->
-        <a href="https://wa.me/917378829173" target="_blank" class="contact-card">
-          <div class="contact-card-icon" style="color: #25d366; background: #eafaf1;">
+    </div>
+  </section>
+
+  <!-- Contact & Direct Order Section -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-header">
+        <span class="sub-badge">Get In Touch</span>
+        <h2 class="brand-devanagari gold-text">Connect With वेणूनाद</h2>
+        <p style="color: var(--text-muted);">Reach out directly to place wholesale orders, event catering consultations, or daily sweets & faral supply.</p>
+      </div>
+
+      <div class="contact-grid">
+
+        <!-- WhatsApp Direct -->
+        <a href="https://wa.me/917378829173?text=Hello%20Venunad,%20I%20would%20like%20to%20place%20an%20order." target="_blank" class="contact-card">
+          <div class="contact-icon" style="background: rgba(37, 211, 102, 0.15); color: #25d366;">
             <i class="fa-brands fa-whatsapp"></i>
           </div>
-          <h4>WhatsApp</h4>
-          <p>Instant chat for customized menu PDFs and quick estimates.</p>
-          <span class="card-value" style="color: #1ebc59;">Send Message &rarr;</span>
+          <div class="contact-card-info">
+            <h4>WhatsApp Order</h4>
+            <p>Instant chat & item inquiry</p>
+            <span>+91 7378829173 &rarr;</span>
+          </div>
         </a>
 
-        <!-- Email Card -->
-        <a href="mailto:contact@venunadcaterers.com" class="contact-card">
-          <div class="contact-card-icon">
+        <!-- Phone Call Direct -->
+        <a href="tel:+917378829173" class="contact-card">
+          <div class="contact-icon">
+            <i class="fa-solid fa-phone"></i>
+          </div>
+          <div class="contact-card-info">
+            <h4>Direct Call</h4>
+            <p>Speak for bulk catering & quotes</p>
+            <span>+91 7378829173</span>
+          </div>
+        </a>
+
+        <!-- Email Direct -->
+        <a href="mailto:contact@venunad.com" class="contact-card">
+          <div class="contact-icon">
             <i class="fa-solid fa-envelope"></i>
           </div>
-          <h4>Email</h4>
-          <p>For corporate banquet proposals and official itineraries.</p>
-          <span class="card-value">contact@venunadcaterers.com</span>
+          <div class="contact-card-info">
+            <h4>Email Inquiry</h4>
+            <p>For corporate & large orders</p>
+            <span>contact@venunad.com</span>
+          </div>
         </a>
 
-        <!-- Service Area Card -->
-        <div class="contact-card">
-          <div class="contact-card-icon">
-            <i class="fa-solid fa-location-dot"></i>
-          </div>
-          <h4>Locations</h4>
-          <p>Complete catering and setup services available across:</p>
-          <span class="card-value">Maharashtra & Goa</span>
-        </div>
       </div>
-
-      <!-- Quick Action Banner -->
-      <div class="cta-banner">
-        <div class="cta-banner-text">
-          <h3>Ready to craft your event menu?</h3>
-          <p>Get in touch today for tastings, custom dishes, and pricing options.</p>
-        </div>
-        <div class="cta-banner-actions">
-          <a href="tel:+917378829173" class="btn btn-primary">
-            <i class="fa-solid fa-phone"></i> Call Now
-          </a>
-          <a href="https://wa.me/917378829173" target="_blank" class="btn btn-whatsapp">
-            <i class="fa-brands fa-whatsapp"></i> WhatsApp Us
-          </a>
-        </div>
-      </div>
-
     </div>
   </section>
 
   <!-- Footer -->
   <footer>
     <div class="container">
-      <div class="brand" style="justify-content: center; color: var(--white); font-size: 1.5rem; margin-bottom: 8px;">
-        <i class="fa-solid fa-bowl-food" style="color: var(--primary);"></i> Venunad Caterers
+      <img src="logo.jpg" alt="Venunad Logo" class="footer-logo">
+      <div style="margin-bottom: 8px;">
+        <span class="brand-devanagari gold-text" style="font-size: 1.6rem;">वेणूनाद (VENUNAD)</span>
       </div>
-      <p>Premium Event Catering & Authentic Flavors. Maharashtra & Goa.</p>
-      <p>&copy; 2026 Venunad Caterers. All Rights Reserved.</p>
-      <p class="dev-credit">
-      Designed & Developed by 
-      <a href="https://inotan-tech.vercel.app/" target="_blank" rel="noopener noreferrer">
-        Tanmay Phadke
-      </a>
+      <p>100% Pure Vegetarian Faral, Traditional Ladus, Festive Sweets & Event Catering.</p>
+      <p style="margin-top: 8px; color: var(--gold);">Call / WhatsApp: +91 7378829173 &bull; &copy; 2026 VENUNAD. All rights reserved.</p>
     </div>
   </footer>
 
+  <!-- Filter & Theme Script -->
+  <script>
+    // Theme toggle
+    const themeBtn = document.getElementById('themeToggle');
+    const html = document.documentElement;
+
+    themeBtn.addEventListener('click', () => {
+      const isDark = html.getAttribute('data-theme') === 'dark';
+      const newTheme = isDark ? 'light' : 'dark';
+      html.setAttribute('data-theme', newTheme);
+      themeBtn.innerHTML = newTheme === 'dark' 
+        ? '<i class="fa-solid fa-sun"></i>' 
+        : '<i class="fa-solid fa-moon"></i>';
+    });
+
+    // Product Category Filter
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const itemCards = document.querySelectorAll('.item-card');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const cat = btn.getAttribute('data-filter');
+        itemCards.forEach(card => {
+          if (cat === 'all' || card.getAttribute('data-cat') === cat) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>
