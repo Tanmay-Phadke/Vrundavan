@@ -402,7 +402,7 @@
       box-shadow: 0 4px 15px var(--gold-glow);
     }
 
-    /* Menu Cards (No Images) */
+    /* Product Cards with Images */
     .items-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -413,10 +413,12 @@
       background: var(--bg-card);
       border: 1px solid var(--border);
       border-radius: 18px;
+      overflow: hidden;
       box-shadow: var(--shadow);
       transition: all 0.3s ease;
       display: flex;
       flex-direction: column;
+      justify-content: space-between;
       backdrop-filter: blur(8px);
     }
 
@@ -426,8 +428,27 @@
       box-shadow: 0 15px 35px var(--gold-glow);
     }
 
+    .item-img-container {
+      width: 100%;
+      height: 190px;
+      overflow: hidden;
+      position: relative;
+      background: var(--bg-surface);
+    }
+
+    .item-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .item-card:hover .item-img {
+      transform: scale(1.06);
+    }
+
     .item-content {
-      padding: 24px;
+      padding: 20px;
       display: flex;
       flex-direction: column;
       flex-grow: 1;
@@ -444,7 +465,7 @@
       padding: 4px 10px;
       border-radius: 6px;
       display: inline-block;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
       letter-spacing: 0.5px;
       align-self: flex-start;
     }
@@ -452,14 +473,13 @@
     .item-title {
       font-size: 1.25rem;
       color: var(--heading);
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
 
     .item-desc {
-      font-size: 0.88rem;
+      font-size: 0.86rem;
       color: var(--text-muted);
-      margin-bottom: 22px;
-      line-height: 1.5;
+      margin-bottom: 18px;
     }
 
     .item-order-btn {
@@ -468,7 +488,7 @@
       justify-content: center;
       gap: 8px;
       width: 100%;
-      padding: 11px 0;
+      padding: 10px 0;
       border-radius: 10px;
       background: var(--bg-surface);
       color: var(--gold);
@@ -730,7 +750,7 @@
     </div>
   </header>
 
-  <!-- Products Showcase (Text & Badges Only) -->
+  <!-- Products Showcase with Images -->
   <section id="products">
     <div class="container">
       <div class="section-header">
@@ -753,6 +773,9 @@
 
         <!-- 1. Shev -->
         <div class="item-card" data-cat="namkeen">
+          <div class="item-img-container">
+            <img src="./crispyshev.jpg" alt="Crispy Shev" class="item-img">
+          </div>
           <div class="item-content">
             <span class="item-category-tag">Namkeen / Faral</span>
             <h3 class="item-title">Crispy Shev</h3>
@@ -765,6 +788,9 @@
 
         <!-- 2. Chivda -->
         <div class="item-card" data-cat="namkeen">
+          <div class="item-img-container">
+            <img src="./chivda.jpg" alt="Special Chivda" class="item-img">
+          </div>
           <div class="item-content">
             <span class="item-category-tag">Namkeen / Faral</span>
             <h3 class="item-title">Special Chivda</h3>
@@ -777,6 +803,9 @@
 
         <!-- 3. Chakli -->
         <div class="item-card" data-cat="namkeen">
+          <div class="item-img-container">
+            <img src="./chakali.jpg" alt="Bhajani Chakli" class="item-img">
+          </div>
           <div class="item-content">
             <span class="item-category-tag">Namkeen / Faral</span>
             <h3 class="item-title">Bhajani Chakli</h3>
@@ -789,6 +818,9 @@
 
         <!-- 4. Shankar Pali -->
         <div class="item-card" data-cat="namkeen">
+          <div class="item-img-container">
+            <img src="./shankarpali.webp" alt="Shankar Pali" class="item-img">
+          </div>
           <div class="item-content">
             <span class="item-category-tag">Namkeen / Faral</span>
             <h3 class="item-title">Shankar Pali</h3>
@@ -801,6 +833,9 @@
 
         <!-- 5. Fenori -->
         <div class="item-card" data-cat="namkeen">
+          <div class="item-img-container">
+            <img src="./fenori.jpg" alt="Fenori" class="item-img">
+          </div>
           <div class="item-content">
             <span class="item-category-tag">Namkeen / Faral</span>
             <h3 class="item-title">Fenori</h3>
@@ -813,6 +848,9 @@
 
         <!-- 6. Karanji -->
         <div class="item-card" data-cat="namkeen">
+          <div class="item-img-container">
+            <img src="./karanji.jpg" alt="Crisp Karanji" class="item-img">
+          </div>
           <div class="item-content">
             <span class="item-category-tag">Namkeen / Faral</span>
             <h3 class="item-title">Crisp Karanji</h3>
@@ -825,6 +863,9 @@
 
         <!-- 7. Besan Ladu -->
         <div class="item-card" data-cat="ladu">
+          <div class="item-img-container">
+            <img src="./besanladu.jpg" alt="Besan Ladu" class="item-img">
+          </div>
           <div class="item-content">
             <span class="item-category-tag">Nutritious Ladu</span>
             <h3 class="item-title">Besan Ladu</h3>
@@ -837,6 +878,9 @@
 
         <!-- 8. Moog Ladu -->
         <div class="item-card" data-cat="ladu">
+          <div class="item-img-container">
+            <img src="./moogladu.jpg" alt="Moog Ladu" class="item-img">
+          </div>
           <div class="item-content">
             <span class="item-category-tag">Nutritious Ladu</span>
             <h3 class="item-title">Moog Ladu</h3>
@@ -849,6 +893,9 @@
 
         <!-- 9. Gahu Pith Ladu -->
         <div class="item-card" data-cat="ladu">
+          <div class="item-img-container">
+            <img src="./gahupithladu.jpg" alt="Gahu Pith Ladu" class="item-img">
+          </div>
           <div class="item-content">
             <span class="item-category-tag">Nutritious Ladu</span>
             <h3 class="item-title">Gahu Pith Ladu</h3>
@@ -861,6 +908,9 @@
 
         <!-- 10. Paustik Ladu -->
         <div class="item-card" data-cat="ladu">
+          <div class="item-img-container">
+            <img src="./postikladu.jpg" alt="Paustik Ladu" class="item-img">
+          </div>
           <div class="item-content">
             <span class="item-category-tag">Healthy / Immunity</span>
             <h3 class="item-title">Paustik Ladu</h3>
@@ -873,6 +923,9 @@
 
         <!-- 11. Methi Ladu -->
         <div class="item-card" data-cat="ladu">
+          <div class="item-img-container">
+            <img src="./methi ladu.jpg" alt="Methi Ladu" class="item-img">
+          </div>
           <div class="item-content">
             <span class="item-category-tag">Ayurvedic / Health</span>
             <h3 class="item-title">Methi Ladu</h3>
@@ -885,6 +938,9 @@
 
         <!-- 12. Aliv Ladu -->
         <div class="item-card" data-cat="ladu">
+          <div class="item-img-container">
+            <img src="./alivladu.jpg" alt="Aliv Ladu" class="item-img">
+          </div>
           <div class="item-content">
             <span class="item-category-tag">Superfood Ladu</span>
             <h3 class="item-title">Aliv (Garden Cress) Ladu</h3>
@@ -897,6 +953,9 @@
 
         <!-- 13. Puran Poli -->
         <div class="item-card" data-cat="sweets">
+          <div class="item-img-container">
+            <img src="./puranpoli" alt="Puran Poli" class="item-img">
+          </div>
           <div class="item-content">
             <span class="item-category-tag">Festive Mithai</span>
             <h3 class="item-title">Soft Puran Poli</h3>
@@ -909,6 +968,9 @@
 
         <!-- 14. Modak -->
         <div class="item-card" data-cat="sweets">
+          <div class="item-img-container">
+            <img src="./modak.jpg" alt="Ukadiche Modak" class="item-img">
+          </div>
           <div class="item-content">
             <span class="item-category-tag">Festive Mithai</span>
             <h3 class="item-title">Ukadiche & Fried Modak</h3>
@@ -921,6 +983,9 @@
 
         <!-- 15. Basundi & Rabdi -->
         <div class="item-card" data-cat="sweets">
+          <div class="item-img-container">
+            <img src="./basundi.avif" alt="Basundi and Rabdi" class="item-img">
+          </div>
           <div class="item-content">
             <span class="item-category-tag">Festive Mithai</span>
             <h3 class="item-title">Basundi & Rabdi</h3>
@@ -933,6 +998,9 @@
 
         <!-- 16. Shrikhand & Amrakhand -->
         <div class="item-card" data-cat="sweets">
+          <div class="item-img-container">
+            <img src="./shrikhand.webp" alt="Shrikhand and Amrakhand" class="item-img">
+          </div>
           <div class="item-content">
             <span class="item-category-tag">Festive Mithai</span>
             <h3 class="item-title">Shrikhand & Amrakhand</h3>
@@ -945,6 +1013,9 @@
 
         <!-- 17. Mangane & Sakharbhat -->
         <div class="item-card" data-cat="sweets">
+          <div class="item-img-container">
+            <img src="./mangane.jpg" alt="Mangane and Sakharbhat" class="item-img">
+          </div>
           <div class="item-content">
             <span class="item-category-tag">Festive Mithai</span>
             <h3 class="item-title">Mangane & Sakharbhat</h3>
@@ -957,6 +1028,9 @@
 
         <!-- 18. Gulabjamun & Halwa -->
         <div class="item-card" data-cat="sweets">
+          <div class="item-img-container">
+            <img src="./gulabjamun.webp" alt="Gulabjamun and Halwa" class="item-img">
+          </div>
           <div class="item-content">
             <span class="item-category-tag">Festive Mithai</span>
             <h3 class="item-title">Gulabjamun & Halwa</h3>
@@ -969,6 +1043,9 @@
 
         <!-- 19. Authentic Masales -->
         <div class="item-card" data-cat="essentials">
+          <div class="item-img-container">
+            <img src="./masala.jpg" alt="Authentic Masales" class="item-img">
+          </div>
           <div class="item-content">
             <span class="item-category-tag">Pantry Essentials</span>
             <h3 class="item-title">Authentic Masales</h3>
@@ -981,6 +1058,9 @@
 
         <!-- 20. Pickles -->
         <div class="item-card" data-cat="essentials">
+          <div class="item-img-container">
+            <img src="./pickle.jpg" alt="Homemade Pickles" class="item-img">
+          </div>
           <div class="item-content">
             <span class="item-category-tag">Pantry Essentials</span>
             <h3 class="item-title">Homemade Pickles (Lonche)</h3>
@@ -993,6 +1073,9 @@
 
         <!-- 21. Papads -->
         <div class="item-card" data-cat="essentials">
+          <div class="item-img-container">
+            <img src="./papad.avif" alt="Handcrafted Papads" class="item-img">
+          </div>
           <div class="item-content">
             <span class="item-category-tag">Pantry Essentials</span>
             <h3 class="item-title">Handcrafted Papads</h3>
@@ -1095,7 +1178,7 @@
         </a>
 
         <!-- Email Direct -->
-        <a href="mailto:sadashivbarve13061983@gmail.com" class="contact-card">
+        <a href="mailto:contact@venunad.com" class="contact-card">
           <div class="contact-icon">
             <i class="fa-solid fa-envelope"></i>
           </div>
@@ -1119,11 +1202,6 @@
       </div>
       <p>100% Pure Vegetarian Faral, Traditional Ladus, Festive Sweets & Event Catering.</p>
       <p style="margin-top: 8px; color: var(--gold);">Call / WhatsApp: +91 7378829173 &bull; &copy; 2026 VENUNAD. All rights reserved.</p>
-      <p class="dev-credit">
-      Designed & Developed by 
-      <a href="https://inotan-tech.vercel.app/" target="_blank" rel="noopener noreferrer">
-        Tanmay Phadke
-      </a>
     </div>
   </footer>
 
