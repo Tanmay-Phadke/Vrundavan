@@ -12,45 +12,51 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
-    /* Theme extracted from Royal Peacock & Gold Logo */
+    /* Theme extracted from the Official Logo: Crimson Red, Flute Gold & Peacock Hues */
     :root[data-theme="dark"] {
-      --bg: #060e0c;
-      --bg-surface: #0a1714;
-      --bg-card: rgba(14, 29, 25, 0.85);
-      --border: rgba(212, 175, 55, 0.2);
-      --border-hover: #d4af37;
-      --gold: #d4af37;
-      --gold-light: #f5e7a9;
-      --gold-gradient: linear-gradient(135deg, #bf953f 0%, #fcf6ba 30%, #b38728 70%, #fbf5b7 100%);
-      --gold-glow: rgba(212, 175, 55, 0.22);
-      --peacock-teal: #00a896;
-      --peacock-deep: #0f2b25;
-      --veg-green: #22c55e;
-      --text: #e6edea;
-      --text-muted: #9bb0a9;
+      --bg: #0c0a0a;
+      --bg-surface: #141111;
+      --bg-card: rgba(23, 18, 18, 0.88);
+      --border: rgba(194, 29, 29, 0.25);
+      --border-hover: #c21d1d;
+      --brand-red: #c21d1d;
+      --brand-red-light: #ff6b6b;
+      --gold: #d97706;
+      --gold-light: #fef3c7;
+      --gold-gradient: linear-gradient(135deg, #c21d1d 0%, #e11d48 40%, #f59e0b 100%);
+      --brand-glow: rgba(194, 29, 29, 0.28);
+      --peacock-teal: #059669;
+      --peacock-blue: #0284c7;
+      --peacock-deep: #1a1212;
+      --veg-green: #16a34a;
+      --text: #f5f2f0;
+      --text-muted: #b0a39f;
       --heading: #ffffff;
-      --badge-bg: rgba(212, 175, 55, 0.12);
-      --shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+      --badge-bg: rgba(194, 29, 29, 0.12);
+      --shadow: 0 15px 35px rgba(0, 0, 0, 0.65);
     }
 
     :root[data-theme="light"] {
-      --bg: #f5f8f7;
+      --bg: #fdfbf9;
       --bg-surface: #ffffff;
       --bg-card: #ffffff;
-      --border: #dce5e1;
-      --border-hover: #b8860b;
-      --gold: #b8860b;
-      --gold-light: #fff8db;
-      --gold-gradient: linear-gradient(135deg, #b8860b 0%, #d4af37 50%, #996515 100%);
-      --gold-glow: rgba(184, 134, 11, 0.15);
-      --peacock-teal: #007a6e;
-      --peacock-deep: #e6f2ef;
+      --border: #f0ddd6;
+      --border-hover: #c21d1d;
+      --brand-red: #b91c1c;
+      --brand-red-light: #fff1f1;
+      --gold: #b45309;
+      --gold-light: #fffbeb;
+      --gold-gradient: linear-gradient(135deg, #b91c1c 0%, #dc2626 50%, #d97706 100%);
+      --brand-glow: rgba(185, 28, 28, 0.16);
+      --peacock-teal: #047857;
+      --peacock-blue: #0369a1;
+      --peacock-deep: #fdf2e9;
       --veg-green: #15803d;
-      --text: #1d2b27;
-      --text-muted: #566c66;
-      --heading: #071a15;
-      --badge-bg: #fff6d9;
-      --shadow: 0 10px 30px rgba(7, 26, 21, 0.08);
+      --text: #261f1d;
+      --text-muted: #6e5f5b;
+      --heading: #180d0d;
+      --badge-bg: #fef2f2;
+      --shadow: 0 10px 30px rgba(185, 28, 28, 0.08);
     }
 
     * {
@@ -90,7 +96,7 @@
       padding: 90px 0;
     }
 
-    /* Gold Gradient Text Helper */
+    /* Logo Crimson & Flute Gold Gradient Text */
     .gold-text {
       background: var(--gold-gradient);
       -webkit-background-clip: text;
@@ -98,15 +104,16 @@
       display: inline-block;
     }
 
-    /* Ambient Pattern */
+    /* Ambient Pattern (Crimson Kumkum + Peacock Feather Accents) */
     .bg-ambient {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: radial-gradient(circle at 10% 20%, rgba(0, 168, 150, 0.08) 0%, transparent 40%),
-                  radial-gradient(circle at 90% 80%, rgba(212, 175, 55, 0.06) 0%, transparent 40%);
+      background: radial-gradient(circle at 10% 20%, rgba(194, 29, 29, 0.07) 0%, transparent 45%),
+                  radial-gradient(circle at 85% 25%, rgba(5, 150, 105, 0.06) 0%, transparent 40%),
+                  radial-gradient(circle at 90% 80%, rgba(217, 119, 6, 0.08) 0%, transparent 45%);
       pointer-events: none;
       z-index: -1;
     }
@@ -115,7 +122,7 @@
     .navbar {
       position: sticky;
       top: 0;
-      background: rgba(10, 23, 20, 0.92);
+      background: rgba(18, 14, 14, 0.94);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
       z-index: 1000;
@@ -123,7 +130,7 @@
     }
 
     [data-theme="light"] .navbar {
-      background: rgba(255, 255, 255, 0.94);
+      background: rgba(255, 255, 255, 0.95);
     }
 
     .nav-wrap {
@@ -144,8 +151,8 @@
       height: 52px;
       border-radius: 50%;
       object-fit: cover;
-      border: 2px solid var(--gold);
-      box-shadow: 0 0 15px var(--gold-glow);
+      border: 2px solid var(--brand-red);
+      box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.4), 0 0 15px var(--brand-glow);
     }
 
     .brand-text h1 {
@@ -178,7 +185,7 @@
     }
 
     .nav-links a:hover {
-      color: var(--gold);
+      color: var(--brand-red);
     }
 
     .nav-actions {
@@ -190,7 +197,7 @@
     .theme-btn {
       background: var(--bg-surface);
       border: 1px solid var(--border);
-      color: var(--gold);
+      color: var(--brand-red);
       width: 40px;
       height: 40px;
       border-radius: 10px;
@@ -202,7 +209,7 @@
     }
 
     .theme-btn:hover {
-      border-color: var(--gold);
+      border-color: var(--brand-red);
       transform: scale(1.05);
     }
 
@@ -224,14 +231,14 @@
 
     .btn-gold {
       background: var(--gold-gradient);
-      color: #060e0c;
+      color: #ffffff;
       font-weight: 800;
-      box-shadow: 0 4px 20px var(--gold-glow);
+      box-shadow: 0 4px 20px var(--brand-glow);
     }
 
     .btn-gold:hover {
       transform: translateY(-2px);
-      box-shadow: 0 8px 30px rgba(212, 175, 55, 0.4);
+      box-shadow: 0 8px 30px rgba(194, 29, 29, 0.45);
     }
 
     .btn-whatsapp {
@@ -264,8 +271,8 @@
       align-items: center;
       gap: 8px;
       padding: 6px 16px;
-      background: rgba(34, 197, 94, 0.1);
-      border: 1px solid rgba(34, 197, 94, 0.3);
+      background: rgba(22, 163, 74, 0.1);
+      border: 1px solid rgba(22, 163, 74, 0.3);
       border-radius: 30px;
       color: var(--veg-green);
       font-weight: 700;
@@ -305,7 +312,7 @@
       max-width: 620px;
     }
 
-    /* Logo Showcase Card */
+    /* Logo Showcase Card with Triple Concentric Ring Effect */
     .hero-logo-showcase {
       background: var(--bg-card);
       border: 2px solid var(--border);
@@ -324,7 +331,7 @@
       left: -50%;
       width: 200%;
       height: 200%;
-      background: radial-gradient(circle, var(--gold-glow) 0%, transparent 65%);
+      background: radial-gradient(circle, var(--brand-glow) 0%, transparent 65%);
       pointer-events: none;
     }
 
@@ -333,8 +340,8 @@
       height: 180px;
       border-radius: 50%;
       object-fit: cover;
-      border: 4px solid var(--gold);
-      box-shadow: 0 0 35px var(--gold-glow);
+      border: 4px solid var(--brand-red);
+      box-shadow: 0 0 0 4px #ffffff, 0 0 0 7px #0c0a0a, 0 0 35px var(--brand-glow);
       margin-bottom: 20px;
     }
 
@@ -362,7 +369,7 @@
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 2px;
-      color: var(--gold);
+      color: var(--brand-red);
       display: block;
       margin-bottom: 8px;
     }
@@ -395,11 +402,11 @@
 
     .filter-btn.active, .filter-btn:hover {
       background: var(--gold-gradient);
-      color: #060e0c;
+      color: #ffffff;
       font-weight: 700;
       border-color: transparent;
       transform: translateY(-2px);
-      box-shadow: 0 4px 15px var(--gold-glow);
+      box-shadow: 0 4px 15px var(--brand-glow);
     }
 
     /* Product Cards with Images */
@@ -425,7 +432,7 @@
     .item-card:hover {
       border-color: var(--border-hover);
       transform: translateY(-5px);
-      box-shadow: 0 15px 35px var(--gold-glow);
+      box-shadow: 0 15px 35px var(--brand-glow);
     }
 
     .item-img-container {
@@ -434,6 +441,7 @@
       overflow: hidden;
       position: relative;
       background: var(--bg-surface);
+      border-bottom: 2px solid rgba(194, 29, 29, 0.15);
     }
 
     .item-img {
@@ -459,7 +467,7 @@
       font-size: 0.72rem;
       font-weight: 700;
       text-transform: uppercase;
-      color: var(--gold);
+      color: var(--brand-red);
       background: var(--badge-bg);
       border: 1px solid var(--border);
       padding: 4px 10px;
@@ -491,7 +499,7 @@
       padding: 10px 0;
       border-radius: 10px;
       background: var(--bg-surface);
-      color: var(--gold);
+      color: var(--brand-red);
       font-weight: 700;
       font-size: 0.86rem;
       text-decoration: none;
@@ -502,7 +510,7 @@
 
     .item-card:hover .item-order-btn {
       background: var(--gold-gradient);
-      color: #060e0c;
+      color: #ffffff;
       border-color: transparent;
     }
 
@@ -530,9 +538,9 @@
     }
 
     .event-card:hover {
-      border-color: var(--gold);
+      border-color: var(--brand-red);
       transform: translateY(-4px);
-      box-shadow: 0 10px 25px var(--gold-glow);
+      box-shadow: 0 10px 25px var(--brand-glow);
     }
 
     .event-icon {
@@ -541,7 +549,7 @@
       border-radius: 50%;
       background: var(--badge-bg);
       border: 1px solid var(--border);
-      color: var(--gold);
+      color: var(--brand-red);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -562,7 +570,7 @@
 
     .tiffin-banner {
       background: linear-gradient(135deg, var(--bg-card), var(--bg));
-      border: 2px dashed var(--gold);
+      border: 2px dashed var(--brand-red);
       border-radius: 20px;
       padding: 35px;
       display: flex;
@@ -605,9 +613,9 @@
     }
 
     .contact-card:hover {
-      border-color: var(--gold);
+      border-color: var(--brand-red);
       transform: translateY(-4px);
-      box-shadow: 0 12px 30px var(--gold-glow);
+      box-shadow: 0 12px 30px var(--brand-glow);
     }
 
     .contact-icon {
@@ -620,7 +628,7 @@
       align-items: center;
       justify-content: center;
       font-size: 1.4rem;
-      color: var(--gold);
+      color: var(--brand-red);
       flex-shrink: 0;
     }
 
@@ -639,7 +647,7 @@
     .contact-card-info span {
       font-size: 0.95rem;
       font-weight: 700;
-      color: var(--gold);
+      color: var(--brand-red);
     }
 
     /* Footer */
@@ -654,7 +662,8 @@
       width: 60px;
       height: 60px;
       border-radius: 50%;
-      border: 2px solid var(--gold);
+      border: 2px solid var(--brand-red);
+      box-shadow: 0 0 0 2px #ffffff;
       margin-bottom: 12px;
       object-fit: cover;
     }
@@ -683,14 +692,14 @@
 </head>
 <body>
 
-  <!-- Subtle Peacock/Gold Radial Ambient -->
+  <!-- Subtle Kumkum Crimson & Peacock Ambient -->
   <div class="bg-ambient"></div>
 
   <!-- Navbar -->
   <nav class="navbar">
     <div class="container nav-wrap">
       <a href="#home" class="brand-logo-wrap">
-        <img src="logo.jpg" alt="वेणूनाद Logo" class="logo-img">
+        <img src="./logo.jpeg" alt="वेणूनाद Logo" class="logo-img">
         <div class="brand-text">
           <h1 class="brand-devanagari gold-text">वेणूनाद</h1>
           <span>VENUNAD &bull; Pure Veg</span>
@@ -740,7 +749,7 @@
 
       <!-- Centerpiece Brand Emblem Showcase -->
       <div class="hero-logo-showcase">
-        <img src="logo.jpg" alt="Venunad Emblem" class="hero-center-logo">
+        <img src="logo.jpeg" alt="Venunad Emblem" class="hero-center-logo">
         <h3 class="brand-devanagari gold-text">वेणूनाद</h3>
         <p class="font-royal">Royal Traditional Taste</p>
         <a href="tel:+917378829173" class="btn btn-gold" style="width: 100%;">
@@ -1074,7 +1083,7 @@
         <!-- 21. Papads -->
         <div class="item-card" data-cat="essentials">
           <div class="item-img-container">
-           
+            
           </div>
           <div class="item-content">
             <span class="item-category-tag">Pantry Essentials</span>
@@ -1196,12 +1205,17 @@
   <!-- Footer -->
   <footer>
     <div class="container">
-      <img src="logo.jpg" alt="Venunad Logo" class="footer-logo">
+      <img src="logo.jpeg" alt="Venunad Logo" class="footer-logo">
       <div style="margin-bottom: 8px;">
         <span class="brand-devanagari gold-text" style="font-size: 1.6rem;">वेणूनाद (VENUNAD)</span>
       </div>
       <p>100% Pure Vegetarian Faral, Traditional Ladus, Festive Sweets & Event Catering.</p>
       <p style="margin-top: 8px; color: var(--gold);">Call / WhatsApp: +91 7378829173 &bull; &copy; 2026 VENUNAD. All rights reserved.</p>
+      <p class="dev-credit">
+      Designed & Developed by 
+      <a href="https://inotan-tech.vercel.app/" target="_blank" rel="noopener noreferrer">
+        Tanmay Phadke
+      </a>
     </div>
   </footer>
 
